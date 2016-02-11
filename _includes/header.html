@@ -15,11 +15,13 @@
 
       <div class="trigger">
         {% for my_page in site.pages %}
-          {% if forloop.index == 3 %}
-          <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-          {% endif %}
-          {% if my_page.title %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+          {% if my_page.title != 404 %}
+            {% if forloop.index == 3 %}
+            <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+            {% endif %}
+            {% if my_page.title %}
+            <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+            {% endif %}
           {% endif %}
         {% endfor %}
       </div>

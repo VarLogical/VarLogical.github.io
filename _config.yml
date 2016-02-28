@@ -9,7 +9,7 @@
 title: Var Logic
 email: charles@var-logic.com
 description: > # this means to ignore newlines until "baseurl:"
-  This is Var-Logic a portfolio of games made by Charlie Ters
+  At Var-Logic view a portfolio of games made by Charlie Ters
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://var-logic.com" # the base hostname & protocol for your site
 twitter_username: Var-Logic

@@ -38,66 +38,117 @@
     .page-link {
         color: $background-color;
         line-height: $base-line-height;
-        border: 3px black solid;
-        border-left: 0;
-        border-right: 3px;
-        border-radius: 7px;
-        padding: 5px;
 
         // Gaps between nav items, but not on the last one
         &:not(:last-child) {
             //margin-right: 20px;
         }
+
+        @media screen and (min-width: $on-palm) {
+          border: 3px black solid;
+          border-left: 0;
+          border-right: 3px;
+          border-radius: 7px;
+          padding: 5px;
+          font-size: larger;
+
+          &:hover, &.active {
+            background-color: $background-color;
+            border-color: black;
+            color: $text-color;
+            text-decoration: none;
+          }
+
+          &#logover {
+            position: absolute;
+            top: -35px;
+            left: 0;
+            z-index: 1;
+            height: 75px;
+            width: 75px;
+            padding: 2px 0;
+            margin: 2px 0;
+            background-color: $text-color;
+
+            &#logover:hover {
+              opacity: 0;
+            }
+          }
+          &#logounder {
+            height: 75px;
+            width: 75px;
+            padding: 2px 0;
+            margin: 2px 0;
+            background-color: $background-color;
+            border-color: black;
+            color: $text-color;
+          }
+        }
+
     }
 
-    // @include media-query($on-palm) {
-    //     position: absolute;
-    //     top: 9px;
-    //     right: $spacing-unit / 2;
-    //     background-color: $background-color;
-    //     border: 1px solid $grey-color-light;
-    //     border-radius: 5px;
-    //     text-align: right;
-    //
-    //     .menu-icon {
-    //         display: block;
-    //         float: right;
-    //         width: 36px;
-    //         height: 26px;
-    //         line-height: 0;
-    //         padding-top: 10px;
-    //         text-align: center;
-    //
-    //         > svg {
-    //             width: 18px;
-    //             height: 15px;
-    //
-    //             path {
-    //                 fill: $grey-color-dark;
-    //             }
-    //         }
-    //     }
-    //
-    //     .trigger {
-    //         clear: both;
-    //         display: none;
-    //     }
-    //
-    //     &:hover .trigger {
-    //         display: block;
-    //         padding-bottom: 5px;
-    //     }
-    //
-    //     .page-link {
-    //         display: block;
-    //         padding: 5px 10px;
-    //
-    //         &:not(:last-child) {
-    //             margin-right: 0;
-    //         }
-    //         margin-left: 20px;
-    //     }
-    // }
+
+
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 9px;
+        right: $spacing-unit / 2;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: right;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color-dark;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+            background-color: $text-color;
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+            border: 3px black solid;
+            border-width: 3px 0;
+            margin-left: auto;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+            //margin-left: 20px;
+
+            &:hover {
+              text-decoration: none;
+            }
+        }
+
+        #logounder {
+          display: none;
+        }
+    }
 }
 
 
@@ -275,6 +326,7 @@ canvas {
   width: 100%;
   max-width: 1600px;
   border:1px solid #000000;
+  background-color: black;
 }
 
 #flashContent {
